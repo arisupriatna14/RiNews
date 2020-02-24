@@ -1,4 +1,4 @@
-class ApiList {
+class ApiEndpoint {
   static getAllSources(String apiKey) {
     return 'http://newsapi.org/v2/sources?apiKey=$apiKey';
   }
