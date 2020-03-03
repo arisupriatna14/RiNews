@@ -32,33 +32,11 @@ class CustomCardNews extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  data.title,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontSize.semiBold,
-                    fontFamily: Fonts.Raleway
-                  )
-                ),
+                Text(data.title, style: CustomCardStyle.title),
                 SizedBox(height: 8.0),
-                Text(
-                  data.description,
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontSize.medium,
-                    fontFamily: Fonts.Raleway
-                  ),
-                ),
+                Text(data.description, style: CustomCardStyle.description),
                 SizedBox(height: 8.0),
-                Text(
-                  Helper.formatDateTime(data.publishedAt),
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.grey,
-                    fontWeight: FontSize.regular,
-                    fontFamily: Fonts.Raleway
-                  ),
-                )
+                Text(Helper.formatDateTime(data.publishedAt), style: CustomCardStyle.date)
               ],
             ),
           ),
@@ -66,4 +44,25 @@ class CustomCardNews extends StatelessWidget {
       ),
     );
   }
+}
+
+class CustomCardStyle {
+  static const TextStyle title = TextStyle(
+    fontSize: 18,
+    fontWeight: FontSize.semiBold,
+    fontFamily: Fonts.Raleway
+  );
+
+  static const TextStyle description = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontSize.medium,
+    fontFamily: Fonts.Raleway
+  );
+
+  static const TextStyle date = TextStyle(
+    fontSize: 14.0,
+    color: Colors.grey,
+    fontWeight: FontSize.regular,
+    fontFamily: Fonts.Raleway
+  );
 }

@@ -7,7 +7,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar('Search'),
+      appBar: customAppBar(context, 'Search'),
       body: SingleChildScrollView(
         child: Center(
           child: Text('SearchScreen')

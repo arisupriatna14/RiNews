@@ -4,6 +4,7 @@ import 'package:flutter_news/screens/following_screen.dart';
 import 'package:flutter_news/screens/headline_screen.dart';
 import 'package:flutter_news/screens/home_screen.dart';
 import 'package:flutter_news/screens/news_stand_screen.dart';
+import 'package:flutter_news/utils/font.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -58,6 +59,16 @@ class _RootAppsState extends State<RootApps> {
         currentIndex: _selectedIndex,
         onTap: onChangeIndexTab,
         selectedItemColor: Colors.blueAccent,
+        selectedLabelStyle: TextStyle(
+          fontSize: 14.0,
+          fontWeight: FontSize.medium,
+          fontFamily: Fonts.Raleway
+        ),
+        unselectedLabelStyle: TextStyle(
+          fontSize: 14.0,
+          fontWeight: FontSize.medium,
+          fontFamily: Fonts.Raleway
+        ),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home, color: Colors.grey),

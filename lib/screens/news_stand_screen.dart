@@ -63,9 +63,7 @@ class _NewsStandScreenState extends State<NewsStandScreen> {
   GridView _listViewSourceNews(List<SourceNewsModel> data) {
     return GridView.builder(
       itemCount: data.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2
-      ),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (BuildContext context, int index) {
         return Card(
           margin: EdgeInsets.symmetric(
@@ -81,31 +79,26 @@ class _NewsStandScreenState extends State<NewsStandScreen> {
                 children: <Widget>[
                   Icon(Icons.assessment, size: 50, color: Colors.blueGrey),
                   SizedBox(height: 8),
-                  Text(
-                    data[index].name,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontSize.semiBold,
-                      fontFamily: Fonts.Raleway
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  Text(data[index].name, style: NewsStandStyle.styleName, textAlign: TextAlign.center),
                   SizedBox(height: 8),
                 ],
               ),
             ),
             onTap: () => Navigator.push(
               context,
-              customRoutes(
-                routes: NewsDetailScreen(
-                  sourceId: data[index].id,
-                  name: data[index].name
-                ),
-              ),
+              customRoutes(routes: NewsDetailScreen(sourceId: data[index].id, name: data[index].name)),
             ),
           ),
         );
       },
     );
   }
+}
+
+class NewsStandStyle {
+  static const TextStyle styleName = TextStyle(
+    fontSize: 16,
+    fontWeight: FontSize.semiBold,
+    fontFamily: Fonts.Raleway
+  );
 }
